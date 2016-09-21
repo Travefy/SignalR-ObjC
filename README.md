@@ -139,7 +139,7 @@ SRHubProxy *chat = [hubConnection createHubProxy:@"chat"];
 // Register for connection lifecycle events
 [hubConnection setStarted:^{
     NSLog(@"Connection Started");
-    [connection send:@"hello world"];
+    [hubConnection send:@"hello world" completionHandler:nil];
 }];
 [hubConnection setReceived:^(NSString *message) {
     NSLog(@"Connection Recieved Data: %@",message);
