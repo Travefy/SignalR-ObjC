@@ -20,6 +20,7 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
+/*
 #if __has_include("DDLog.h")
 #import <CocoaLumberjack/DDLog.h>
 
@@ -37,14 +38,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #define SRLogVerbose(frmt, ...) LOG_OBJC_MAYBE(LOG_ASYNC_VERBOSE, LOG_LEVEL_DEF, LOG_FLAG_VERBOSE, 0, frmt, ##__VA_ARGS__)
 
 #else
-
+*/
 #define SRLogError(frmt, ...)      do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 #define SRLogWarn(frmt, ...)       do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 #define SRLogInfo(frmt, ...)       do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 #define SRLogDebug(frmt, ...)      do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 #define SRLogVerbose(frmt, ...)    do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 
-#endif
+//#endif
 
 #define SRLogPrefixedError(type, frmt, ...) SRLogError(@"%@:\t%@", type, [NSString stringWithFormat:frmt, ##__VA_ARGS__]);
 #define SRLogPrefixedWarn(type, frmt, ...) SRLogWarn(@"%@:\t%@", type, [NSString stringWithFormat:frmt, ##__VA_ARGS__]);
